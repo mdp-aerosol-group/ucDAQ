@@ -8,6 +8,34 @@
     <property name="step_increment">0.10000000000000001</property>
     <property name="page_increment">10</property>
   </object>
+  <object class="GtkAdjustment" id="setting_temp1">
+    <property name="lower">-60</property>
+    <property name="upper">100</property>
+    <property name="value">20</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="setting_temp2">
+    <property name="lower">-60</property>
+    <property name="upper">100</property>
+    <property name="value">10</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="startT_1">
+    <property name="lower">10</property>
+    <property name="upper">200</property>
+    <property name="value">20</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="stopT_1">
+    <property name="lower">1000</property>
+    <property name="upper">3000</property>
+    <property name="value">2500</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
   <object class="GtkWindow" id="mainWindow">
     <property name="width_request">1140</property>
     <property name="height_request">330</property>
@@ -24,7 +52,6 @@
         <property name="title" translatable="yes">NC State Unipolar Charger</property>
         <property name="subtitle">AC Power Supply Data Acquisition and Control System</property>
         <property name="has_subtitle">False</property>
-        <property name="show_close_button">True</property>
         <child>
           <object class="GtkEntry" id="Timer">
             <property name="visible">True</property>
@@ -102,10 +129,10 @@
               <object class="GtkLabel">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">    Frequency  (Hz)             Amplitude (V)               Bias (V)                  Mean Voltage Sig (V)    Mean Voltage Amp (V)</property>
+                <property name="label" translatable="yes">Frequency  (Hz)</property>
               </object>
               <packing>
-                <property name="x">40</property>
+                <property name="x">55</property>
                 <property name="y">10</property>
               </packing>
             </child>
@@ -148,37 +175,65 @@
                 <property name="y">38</property>
               </packing>
             </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Amplitude (V)</property>
+              </object>
+              <packing>
+                <property name="x">215</property>
+                <property name="y">10</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Bias (V) </property>
+              </object>
+              <packing>
+                <property name="x">400</property>
+                <property name="y">10</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Mean Voltage Sig (V)  </property>
+              </object>
+              <packing>
+                <property name="x">525</property>
+                <property name="y">10</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Mean Voltage Amp (V)</property>
+              </object>
+              <packing>
+                <property name="x">700</property>
+                <property name="y">10</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="stopButton">
+                <property name="label" translatable="yes">Stop DAQ</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="x">880</property>
+                <property name="y">38</property>
+              </packing>
+            </child>
           </object>
         </child>
       </object>
     </child>
-  </object>
-  <object class="GtkAdjustment" id="setting_temp1">
-    <property name="lower">-60</property>
-    <property name="upper">100</property>
-    <property name="value">20</property>
-    <property name="step_increment">1</property>
-    <property name="page_increment">10</property>
-  </object>
-  <object class="GtkAdjustment" id="setting_temp2">
-    <property name="lower">-60</property>
-    <property name="upper">100</property>
-    <property name="value">10</property>
-    <property name="step_increment">1</property>
-    <property name="page_increment">10</property>
-  </object>
-  <object class="GtkAdjustment" id="startT_1">
-    <property name="lower">10</property>
-    <property name="upper">200</property>
-    <property name="value">20</property>
-    <property name="step_increment">1</property>
-    <property name="page_increment">10</property>
-  </object>
-  <object class="GtkAdjustment" id="stopT_1">
-    <property name="lower">1000</property>
-    <property name="upper">3000</property>
-    <property name="value">2500</property>
-    <property name="step_increment">1</property>
-    <property name="page_increment">10</property>
   </object>
 </interface>
