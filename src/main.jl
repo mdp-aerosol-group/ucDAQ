@@ -14,10 +14,10 @@ using PyCall
 using NumericIO
 
 (@isdefined wnd) && destroy(wnd)
-gui = GtkBuilder(filename=pwd()*"/edb.glade")  # Load GUI
+gui = GtkBuilder(filename=pwd()*"/gui.glade")  # Load GUI
 wnd = gui["mainWindow"]
 
-include("global_variables.jl")        # Reactive Signals and global variables
+include("constants.jl")               # Reactive Signals and global constants
 include("gtk_graphs.jl")              # push graphs to the UI#
 include("setup_graphs.jl")            # Initialize graphs 
 include("daq_loops.jl")               # Contains DAQ loops               
@@ -34,7 +34,6 @@ main_elapsed_time = foldp(+, 0.0, oneHz)  # Main timer
 
 # Instantiate parallel  1 Hz Loops and start 10 Hz loop
 function main()
-#    @async oneHz_data_file()         # Write data file
     @async oneHz_generic_loop()      # Generic 1 Hz DAQ (TE)
 end
 
